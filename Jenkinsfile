@@ -6,7 +6,7 @@ pipeline {
     dockerhubcrd = '94992ee7-67a1-4a48-8086-d9a1d2d1ddb3'
 	CI = 'true'
     }
-    agent none
+    agent any
     
 	stages {
         stage('Test') {
