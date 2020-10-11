@@ -47,8 +47,8 @@ pipeline {
     
         stage('Remove Unused docker image') {
             steps{
-              sh "docker rmi $dockerhuburl + ":$BUILD_NUMBER"
-              
+              sh "docker rmi $dockerhuburl:$BUILD_NUMBER"
+             
             }
         }
 
