@@ -6,7 +6,7 @@ pipeline {
     dockerhubcrd = '94992ee7-67a1-4a48-8086-d9a1d2d1ddb3'
 	CI = 'true'
     }
-    agent any
+    agent none
     
 	stages {
         stage('Test') {
@@ -47,8 +47,7 @@ pipeline {
     
         stage('Remove Unused docker image') {
             steps{
-              sh "docker rmi $registry$imageName:$BUILD_NUMBER"
-              sh "docker rmi $registry$imageName:latest"
+              sh "docker rmi dockerhuburl + ":$BUILD_NUMBER"
             }
         }
 
